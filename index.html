@@ -43,28 +43,24 @@
   <ul>
     <li>neved és link</li>
   </ul>
-<h1 id="result">Kitaláld a számot!</h1>
-  <input id="guess" type="number" min="1" max="10">
-  <button id="submit">Kitalálás</button>
- 
+  <h1 id="result">Fej vagy írás?</h1>
+  <button id="play">Játszom!</button>
+  <script src="script.js"></script>
 
 </body>
   <script>
 
-const resultElem = document.getElementById("szam");
-const guessInput = document.getElementById("tipp");
-const submitButton = document.getElementById("submit");
+
+const resultElem = document.getElementById("result");
+const playButton = document.getElementById("play");
 
 
-let secretNumber = Math.floor(Math.random() * 10) + 1;
-
-
-Button.addEventListener("click", () => {
-  const guess = parseInt(guessInput.value);
-  if (guess === secretNumber) {
-    resultElem.textContent = `Gratulálok, kitaláltad a számot: ${secretNumber}!`;
+playButton.addEventListener("click", () => {
+  const coinFlip = Math.random();
+  if (coinFlip < 0.5) {
+    resultElem.textContent = "Fej!";
   } else {
-    resultElem.textContent = `Sajnos, nem találtad el. Próbáld újra!`;
+    resultElem.textContent = "Írás!";
   }
 });
     </script>
