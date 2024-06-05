@@ -15,11 +15,29 @@
   <ul>
     <li>neved és link</li>
   </ul>
-   <h1 id="myElement">csááááááááááááá</h1>
+<h1 id="result">Kitaláld a számot!</h1>
+  <input id="guess" type="number" min="1" max="10">
+  <button id="submit">Kitalálás</button>
+ 
 
 </body>
   <script>
-const elem = document.getElementById("myElement");
-elem.style.color = "blue";
+
+const resultElem = document.getElementById("szam");
+const guessInput = document.getElementById("tipp");
+const submitButton = document.getElementById("submit");
+
+
+let secretNumber = Math.floor(Math.random() * 10) + 1;
+
+
+Button.addEventListener("click", () => {
+  const guess = parseInt(guessInput.value);
+  if (guess === secretNumber) {
+    resultElem.textContent = `Gratulálok, kitaláltad a számot: ${secretNumber}!`;
+  } else {
+    resultElem.textContent = `Sajnos, nem találtad el. Próbáld újra!`;
+  }
+});
     </script>
 </html>
